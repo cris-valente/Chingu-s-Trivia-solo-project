@@ -121,4 +121,22 @@ const quizQuestions = [
     }
   ]
 
-console.log(quizQuestions[9].choices.a)
+  if (typeof document !== 'undefined') {
+    const firstChoice =  document.createElement('li')
+    const secondChoice = document.createElement('li')
+    const thirdChoice = document.createElement('li')
+    const fourthChoice = document.createElement('li')
+    
+  
+    firstChoice.textContent = quizQuestions[0].choices.a
+    secondChoice.textContent = quizQuestions[0].choices.b
+    thirdChoice.textContent = quizQuestions[0].choices.c
+    fourthChoice.textContent = quizQuestions[0].choices.d
+    
+    answers.appendChild(firstChoice)
+    answers.appendChild(secondChoice)
+    answers.appendChild(thirdChoice)
+    answers.appendChild(fourthChoice)
+    
+    console.log(quizQuestions[0].choices.a.textContent)
+  }
