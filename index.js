@@ -122,21 +122,29 @@ const quizQuestions = [
   ]
 
   if (typeof document !== 'undefined') {
-    const firstChoice =  document.createElement('li')
-    const secondChoice = document.createElement('li')
-    const thirdChoice = document.createElement('li')
-    const fourthChoice = document.createElement('li')
+
+    const questionEl = document.getElementById('question')
+    const numberEl = document.getElementById('num')
+    const answersEl = document.getElementById('answers')
+
+    function renderQuestion(number) {
     
-  
-    firstChoice.textContent = quizQuestions[0].choices.a
-    secondChoice.textContent = quizQuestions[0].choices.b
-    thirdChoice.textContent = quizQuestions[0].choices.c
-    fourthChoice.textContent = quizQuestions[0].choices.d
+        for (let element of quizQuestions) {
+            if (element.id === number){
+                questionEl.innerHTML = element.question
+                numberEl.innerHTML = `Question (${element.id} of ${quizQuestions.length})`
+                answersEl.innerHTML = ''
     
-    answers.appendChild(firstChoice)
-    answers.appendChild(secondChoice)
-    answers.appendChild(thirdChoice)
-    answers.appendChild(fourthChoice)
-    
-    console.log(quizQuestions[0].choices.a.textContent)
+                for (const [key, value] of Object.entries(element.choices)) {
+                    const option = document.createElement('li')
+                    option.setAttribute("id", key);
+                    option.classList.add('answer-btn')
+                    option.textContent = value
+                    answersEl.appendChild(option)
+                }
+            }
+            
+        }
+    }
+    renderQuestion(1)
   }
