@@ -143,13 +143,71 @@ const quizQuestions = [
         if(e.target.id && e.target.id === 'start-btn'){
             gameStarter()
         }
-    }
-    // Renders first question by adding  1 to currentQuestionNumber
-    function gameStarter(){
-        currentQuestionNumber = currentQuestionNumber + 1
+
+        // When the user answers the last question:
+        else if (e.target.id && currentQuestionNumber === quizQuestions.length){
+            
+            questionEl.innerHTML = 'You just finished this test!'
+            numberEl.innerHTML = `You answered ${correctAnswers} questions correctly 
+            out of ${quizQuestions.length}`
+            
+            answersEl.innerHTML = ''
+            
+            setTimeout(function(){
+            questionEl.innerHTML = ''
+            startDivEl.classList.remove('hide')
+            welcomeTitleEl.textContent = "Start again?"
+            }, 2000)
+        }
+
+        // If the user answers right:
+        else if(currentQuestionNumber > 0 && 
+                e.target.id === quizQuestions[currentQuestionNumber - 1].answer){
+            
+            document.getElementById(e.target.id).classList.add('right-answer')
+            
+            // Shows 'correct' msg:
+            const correctAnswerMsg = document.createElement('div')
+            correctAnswerMsg.textContent = 'Correct!'
+            container.appendChild(correctAnswerMsg)
+            
+            // Updates number of correct answers
+            if(document.getElementsByClassName('wrong-answer').length !== 0){
+                console.log(document.getElementsByClassName('wrong-answer').length)
+                correctAnswers-- 
+            }
+
+            // Adds CSS transition class
+            setTimeout(function() {
+                containerEl.classList.add('transition')
+                
+            }, 1800);
+            
+            // Renders next question after 2s
+            setTimeout(function() {
+                
+                containerEl.classList.remove('transition')
+                currentQuestionNumber++
+                correctAnswerMsg.textContent = ''
                 renderQuestion(currentQuestionNumber)
-                startDivEl.classList.add('hide')
+            }, 2300); 
+        }
+
+        // If the user answers wrong:
+        else if (e.target.id && e.target.id.match(/^[a-d]$/i)){
+            
+            document.getElementById(e.target.id).classList.add('wrong-answer')
+            document.getElementById(e.target.id).classList.remove('answer-btn')
+        }
     }
+
+
+        // Renders first question by adding  1 to currentQuestionNumber
+        function gameStarter(){
+            currentQuestionNumber = currentQuestionNumber + 1
+                    renderQuestion(currentQuestionNumber)
+                    startDivEl.classList.add('hide')
+        }
 
     function renderQuestion(number) {
     
