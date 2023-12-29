@@ -109,3 +109,29 @@ html, body {
     display: none;
 }
 
+.wrong-answer{
+    background-color: #D69085;
+    color: lightgray;
+    border: 2px solid lightgray;
+    border-style: inset;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    list-style: none;
+}
+
+.right-answer{
+    transform: scale(1.05);
+    background: var(--linear-gradient);
+    animation: glowing 1500ms infinite;  
+}
+
+.animation{
+    animation: glowing 1500ms infinite;
+}
+
+@keyframes glowing {
+  0% { background-color: var(--linear-gradient); box-shadow: 0 0 3px #B20000; }
+  50% { background-color: var(--reverse-linear-gradient); box-shadow: 0 0 40px #FF0000; }
+  100% { background-color: var(--linear-gradient); box-shadow: 0 0 3px #B20000; }
+}
