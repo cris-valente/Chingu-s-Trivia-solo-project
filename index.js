@@ -126,6 +126,16 @@ const quizQuestions = [
     const questionEl = document.getElementById('question')
     const numberEl = document.getElementById('num')
     const answersEl = document.getElementById('answers')
+    const containerEl = document.getElementById('container')
+    const welcomeTitleEl = document.getElementById('welcome-title')
+    const startDivEl =  document.getElementById('start-div')
+
+    // Controllers
+    let currentQuestionNumber = 0
+    let correctAnswers = quizQuestions.length
+
+    // Event listener added to the whole page that calls checkAnswer()
+    document.addEventListener('click', checkAnswer)
 
     function renderQuestion(number) {
     
