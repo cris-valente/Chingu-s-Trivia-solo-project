@@ -21,6 +21,73 @@ html, body {
     font-family: 'Oswald', sans-serif;
 }
 
+.container{
+    border-radius: 5px;
+    padding: 20px;
+    width: 80%;
+    margin: auto; 
+    transition: transform 1s,
+    opacity 0.5s ease;
+}
+.transition{
+    transform: translate(-200%, 0);
+    opacity: 0;
+}
+
+/* To start the trivia */
+.welcome-title{
+    margin-top: 20%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.button-border{
+    background: var(--linear-gradient);
+    width: 200px;
+    height: 80px; 
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    transition: transform .2s;
+}
+
+.button-border:hover{
+    background: var(--reverse-linear-gradient);
+    transform: scale(1.05);
+    color: var(--btn-color-hover);
+}
+
+.button{
+   width: 195px;
+   height: 75px; 
+   border: none;
+   display: flex;
+   margin: auto;
+   align-items: center;
+   justify-content: center;
+   background: var(--main-black);
+   color: var(--btn-color);
+   cursor: pointer;
+}
+
+.button-border:hover .button:hover{
+    color: --btn-color-hover;   
+}
+
+/* Questions */
+.question{
+    color: #070707;
+    text-align: center;
+}
+
+.answers-container{
+    width: 60%;
+    margin: auto;  
+    text-align: center;
+}
+
 .answer-btn{
     background: linear-gradient(115deg, var(--grad-color1), var(--grad-color4));
     padding: 10px;
@@ -33,3 +100,12 @@ html, body {
     letter-spacing: 3px;
     cursor: pointer;
 }
+
+.answer-btn:hover{
+    transform: scale(1.05);
+}
+
+.hide{
+    display: none;
+}
+
