@@ -19,6 +19,8 @@ html, body {
     color: var(--main-black);
     background: linear-gradient( 90deg,var(--body-bg2), 5%, var(--body-bg1), 95%, var(--body-bg2) );
     font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .container{
@@ -26,12 +28,16 @@ html, body {
     padding: 20px;
     width: 80%;
     margin: auto; 
-    transition: transform 1s,
-    opacity 0.5s ease;
+    transition: all 0.7s ease;
 }
+
 .transition{
     transform: translate(-200%, 0);
     opacity: 0;
+}
+.transition2{
+    opacity: 0;
+    transform: translate(200%, 0);
 }
 
 /* To start the trivia */
@@ -121,14 +127,14 @@ html, body {
 }
 
 .right-answer{
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     background: var(--linear-gradient);
-    animation: glowing 1500ms infinite;  
+    animation: glowing 900ms infinite;  
 }
 
-.animation{
+/* .animation{
     animation: glowing 1500ms infinite;
-}
+} */
 
 @keyframes glowing {
   0% { background-color: var(--linear-gradient); box-shadow: 0 0 3px #B20000; }
