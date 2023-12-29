@@ -137,6 +137,13 @@ const quizQuestions = [
     // Event listener added to the whole page that calls checkAnswer()
     document.addEventListener('click', checkAnswer)
 
+    // Function that starts the game and check if user answers right or wrong
+    function checkAnswer(e){
+        
+        if(e.target.id && e.target.id === 'start-btn'){
+            gameStarter()
+        }
+    }
     // Renders first question by adding  1 to currentQuestionNumber
     function gameStarter(){
         currentQuestionNumber = currentQuestionNumber + 1
@@ -163,5 +170,4 @@ const quizQuestions = [
             
         }
     }
-    renderQuestion(1)
   }
