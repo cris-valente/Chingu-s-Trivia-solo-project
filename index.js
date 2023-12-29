@@ -137,6 +137,13 @@ const quizQuestions = [
     // Event listener added to the whole page that calls checkAnswer()
     document.addEventListener('click', checkAnswer)
 
+    // Renders first question by adding  1 to currentQuestionNumber
+    function gameStarter(){
+        currentQuestionNumber = currentQuestionNumber + 1
+                renderQuestion(currentQuestionNumber)
+                startDivEl.classList.add('hide')
+    }
+
     function renderQuestion(number) {
     
         for (let element of quizQuestions) {
