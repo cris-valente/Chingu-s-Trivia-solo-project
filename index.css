@@ -14,7 +14,7 @@
 }
 
 html, body {
-    margin: 0;
+    margin-top: 25px;
     padding: 0;
     color: var(--main-black);
     background: linear-gradient( 90deg,var(--body-bg2), 5%, var(--body-bg1), 95%, var(--body-bg2) );
@@ -23,10 +23,12 @@ html, body {
     max-width: 100%;
 }
 
+
 .container{
     border-radius: 5px;
     padding: 20px;
     width: 80%;
+    max-width: 560px;
     margin: auto; 
     transition: all 0.7s ease;
 }
