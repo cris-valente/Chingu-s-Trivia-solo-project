@@ -80,7 +80,6 @@ function checkAnswer(e){
     }
 }
 
-
     // Renders first question by adding  1 to currentQuestionNumber
     function gameStarter(){
       numberEl.innerHTML = ''
@@ -91,7 +90,7 @@ function checkAnswer(e){
     }
 
 function renderQuestion(number) {
-    
+  
     for (let element of quizQuestions) {
         if (element.id === number){
             
@@ -106,8 +105,7 @@ function renderQuestion(number) {
                 option.textContent = value
                 answersEl.appendChild(option)
             }
-        }
-        
+        }    
     }
 }
 

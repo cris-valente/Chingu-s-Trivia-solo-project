@@ -23,7 +23,6 @@ html, body {
     max-width: 100%;
 }
 
-
 .container{
     border-radius: 5px;
     padding: 20px;
@@ -133,10 +132,6 @@ html, body {
     background: var(--linear-gradient);
     animation: glowing 900ms infinite;  
 }
-
-/* .animation{
-    animation: glowing 1500ms infinite;
-} */
 
 @keyframes glowing {
   0% { background-color: var(--linear-gradient); box-shadow: 0 0 3px #B20000; }
