@@ -83,10 +83,11 @@ function checkAnswer(e){
 
     // Renders first question by adding  1 to currentQuestionNumber
     function gameStarter(){
-      renderQuestion(1)
-      startDivEl.classList.add('hide')
       numberEl.innerHTML = ''
       welcomeTitleEl.textContent = ''
+      currentQuestionNumber = 1
+      renderQuestion(currentQuestionNumber)
+      startDivEl.classList.add('hide')
     }
 
 function renderQuestion(number) {
