@@ -12,9 +12,14 @@ LIVE LINK: https://cristiano-trivia.netlify.app/
 4. When user answers wrong he loses one point on his final score.
 5. There's a **animation**: the whole container div disappears to the left, a new questions is rendered and then the container appears from the right.
 6. When the user answers all questions his **score** is showed. The number of questions answered right out of total questions.
+7. The app is responsive and can be runned in all devices.
 ## Running the project
 The code is made so questions can be removed and new questions can be added.The app will render all questions.   
 
 In the future the code could run questions randomly so the trivia changes everytime and could get questions from an API.
 ## Dependencies 
 The only external resource of this project is google fonts
+## Preview images
+![Start button on oppening app](https://github.com/cris-valente/trivia_project-chingu_voyage_t1/blob/main/images/start-trivia.png "Start button")
+![First question after pressing start](https://github.com/cris-valente/trivia_project-chingu_voyage_t1/blob/main/images/1st-question-trivia.png "First Question")
+
